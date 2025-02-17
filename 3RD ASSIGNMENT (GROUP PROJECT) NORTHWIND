@@ -1,0 +1,72 @@
+SELECT * FROM orders
+
+--Are there any noticeable sales trend overtime?
+SELECT EXTRACT (Year FROM orderdate) AS Year,
+	ROUND(CAST(SUM (unitprice*quantity) AS
+	numeric),2) AS "Year Sales Trend" 
+	FROM orders
+	JOIN order_details USING (orderid)
+	GROUP BY Year
+	ORDER BY Year;
+
+SELECT EXTRACT (Year FROM orderdate) AS Year, TO_CHAR (orderdate, 'Month') AS Month,
+	TO_CHAR (orderdate, 'Day') AS Day,
+	SUM (unitprice*quantity) AS "Year Sales Trend"
+	FROM orders
+	JOIN order_details USING (orderid)
+	GROUP BY Year, Month, Day
+	ORDER BY Year;
+
+--Which are the best and worst selling products?
+--Best selling product
+SELECT products.productid, productname, SUM (od.unitprice*quantity) AS "Quantity Sold" 
+	FROM products 
+	JOIN order_details od USING (productid)
+	GROUP BY products.productid, productname
+	ORDER BY SUM (od.unitprice*quantity) DESC
+	LIMIT 1;
+--Worst selling products
+SELECT products.productid, productname, SUM (od.unitprice*quantity) AS "Quantity Sold" 
+	FROM products 
+	JOIN order_details od USING (productid)
+	GROUP BY products.productid, productname
+	ORDER BY SUM (od.unitprice*quantity) 
+	LIMIT 1;
+
+SELECT * FROM customers
+	
+--Can you identify any key customers?
+SELECT companyname KeyCustomers,SUM (od.unitprice*quantity) AS "Orders"
+	FROM customers
+	JOIN orders USING (customerid)
+	JOIN order_details od
+	USING (orderid)
+	GROUP BY KeyCustomers
+	ORDER BY SUM (od.unitprice*quantity) DESC
+
+	SELECT * FROM orders
+
+--Are shipping costs consistent across providers?
+SELECT shippers.companyname AS "shipping providers", SUM(freight) AS "Shipping costs"
+	FROM shippers
+	JOIN orders USING (customerid)
+	GROUP BY customers.companyname
+	ORDER BY SUM(freight) DESC
+
+SELECT customerid shipping_providers, shipvia, SUM(freight) AS "Shipping costs"
+	FROM orders
+GROUP BY customerid, shipvia
+ORDER BY SUM (freight)
+
+	SELECT * FROM suppliers
+	SELECT (freight) FROM orders
+	
+SELECT shippers.companyname AS "Shipping Provider", 
+       SUM(freight) AS "Avg Shipping Cost", 
+       COUNT(orderid) AS "Total Shipments"
+FROM orders
+JOIN shippers ON orders.shipvia = shippers.shipperid
+GROUP BY shippers.companyname
+ORDER BY AVG(freight) DESC;
+
+SELECT AVG (freight) FROM orders
