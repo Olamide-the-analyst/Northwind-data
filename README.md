@@ -20,12 +20,12 @@ The goal of this project is to analyze the Northwind database to uncover actiona
 
 ## **SQL Queries**
 - **Sales trend overtime**
-
-  '''sql
+To analyze yearly sales trends, use the following SQL query:
+  ```sql
   SELECT EXTRACT(Year FROM orderdate) AS Year,
        ROUND(CAST(SUM(unitprice * quantity) AS numeric), 2) AS "Year Sales Trend"
-FROM orders
-JOIN order_details USING (orderid)
-GROUP BY Year
-ORDER BY Year;
-
+  FROM orders
+  JOIN order_details USING (orderid)
+  GROUP BY Year
+  ORDER BY Year;
+This query extracts the year from the `orderdate`, calculates the total sales for each year, and rounds the result to two decimal places.
