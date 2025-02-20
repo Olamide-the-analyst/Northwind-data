@@ -19,7 +19,8 @@ The goal of this project is to analyze the Northwind database to uncover actiona
 - **Shipping Costs:** Are shipping costs consistent across providers? How can logistics be optimized to reduce costs?
 
 ## **SQL Queries**
-- **Sales trend overtime **
+- **Sales trend overtime**
+
   '''sql'''
   SELECT EXTRACT(Year FROM orderdate) AS Year,
        ROUND(CAST(SUM(unitprice * quantity) AS numeric), 2) AS "Year Sales Trend"
