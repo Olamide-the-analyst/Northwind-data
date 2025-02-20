@@ -11,3 +11,11 @@
 4. SQL queries
 5. Insights and recommendations
 6. How to use this repository
+
+## **PROJECT OVERVIEW
+
+## **QUESTIONS
+-Are there any noticeable sales trends over time?
+- Which are the best and worst-selling products?
+- Can you identify any key customers?
+- Are shipping costs consistent across providers?
