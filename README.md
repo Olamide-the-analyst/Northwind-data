@@ -12,9 +12,9 @@
 5. Insights and recommendations
 6. How to use this repository
 
-## **PROJECT OVERVIEW
+## **PROJECT OVERVIEW**
 
-## **QUESTIONS
+## **QUESTIONS**
 -Are there any noticeable sales trends over time?
 - Which are the best and worst-selling products?
 - Can you identify any key customers?
