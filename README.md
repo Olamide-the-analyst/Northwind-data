@@ -56,6 +56,28 @@ This query extracts the year from the `orderdate`, calculates the total sales fo
 	JOIN order_details od USING (productid)
 	GROUP BY products.productid, productname
 	ORDER BY ROUND (CAST(SUM (od.unitprice*quantity) AS numeric),2) 
-	LIMIT 1; sql```
+	LIMIT 1; 
   
 ### **Key Customers:**
+```sql
+SELECT companyname KeyCustomers, ROUND (CAST (SUM (od.unitprice*quantity) AS numeric), 2) AS "Orders"
+	FROM customers
+	JOIN orders USING (customerid)
+	JOIN order_details od
+	USING (orderid)
+	GROUP BY KeyCustomers
+	ORDER BY ROUND (CAST (SUM (od.unitprice*quantity) AS numeric), 2) DESC
+```
+
+### **Best and Worst selling products:**
+- To analyse the shipping costs among the different providers, use this sql query:
+  ```sql
+  SELECT shippers.companyname AS "Shipping Provider", 
+       SUM(freight) AS "Avg Shipping Cost", 
+       COUNT(orderid) AS "Total Shipments"
+	FROM orders
+	JOIN shippers ON orders.shipvia = shippers.shipperid
+	GROUP BY shippers.companyname
+	ORDER BY AVG(freight) DESC;
+```
+
