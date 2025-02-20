@@ -20,7 +20,7 @@ The goal of this project is to analyze the Northwind database to uncover actiona
 
 ## **SQL Queries**
 - **Sales trend overtime **
-  'sql'
+  '''sql'''
   SELECT EXTRACT(Year FROM orderdate) AS Year,
        ROUND(CAST(SUM(unitprice * quantity) AS numeric), 2) AS "Year Sales Trend"
 FROM orders
