@@ -39,3 +39,23 @@ This query extracts the year from the `orderdate`, calculates the total sales fo
   GROUP BY Month
   ORDER BY Month;
 
+### **Best and Worst selling products:**
+- Best Selling product
+  ```sql
+  SELECT products.productid, productname, ROUND (CAST(SUM (od.unitprice*quantity)AS numeric), 2) AS "Quantity Sold" 
+	FROM products 
+	JOIN order_details od USING (productid)
+	GROUP BY products.productid, productname
+	ORDER BY ROUND (CAST(SUM (od.unitprice*quantity)AS numeric), 2) DESC
+	LIMIT 1;
+
+- Worst Selling product
+  ```sql
+  SELECT products.productid, productname, ROUND (CAST(SUM (od.unitprice*quantity) AS numeric),2) AS "Quantity Sold" 
+	FROM products 
+	JOIN order_details od USING (productid)
+	GROUP BY products.productid, productname
+	ORDER BY ROUND (CAST(SUM (od.unitprice*quantity) AS numeric),2) 
+	LIMIT 1; sql```
+  
+### **Key Customers:**
