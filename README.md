@@ -19,8 +19,8 @@ The goal of this project is to analyze the Northwind database to uncover actiona
 - **Shipping Costs:** Are shipping costs consistent across providers? How can logistics be optimized to reduce costs?
 
 ## **SQL Queries**
-- **Sales trend overtime:**
-To analyze yearly sales trends, use the following SQL query:
+### **Sales trend overtime:**
+- To analyze yearly sales trends, use the following SQL query:
   ```sql
   SELECT EXTRACT(Year FROM orderdate) AS Year,
        ROUND(CAST(SUM(unitprice * quantity) AS numeric), 2) AS "Year Sales Trend"
@@ -30,7 +30,7 @@ To analyze yearly sales trends, use the following SQL query:
   ORDER BY Year;
 This query extracts the year from the `orderdate`, calculates the total sales for each year, and rounds the result to two decimal places. The **CAST** function was used to change the 'quantity' data type, so that the 'round' function can be applied on it.
 
-To analyze monthly sales trends, use the following SQL query:
+- To analyze monthly sales trends, use the following SQL query:
   ```sql
   SELECT TO_CHAR (orderdate, 'Month') AS Month,
        ROUND(CAST(SUM(unitprice * quantity) AS numeric), 2) AS "Monthly Sales Trend"
