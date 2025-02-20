@@ -1,6 +1,6 @@
 # Northwind Data Analysis 
 
-**## Table of Content**
+## **Table of Content**
 1. Project overview
 2. Questions
    - Sales trend over time
