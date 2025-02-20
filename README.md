@@ -69,7 +69,7 @@ SELECT companyname KeyCustomers, ROUND (CAST (SUM (od.unitprice*quantity) AS num
 	ORDER BY ROUND (CAST (SUM (od.unitprice*quantity) AS numeric), 2) DESC
 ```
 
-### **Best and Worst selling products:**
+### **Shipping costs analysis:**
 - To analyse the shipping costs among the different providers, use this sql query:
   ```sql
   SELECT shippers.companyname AS "Shipping Provider", 
