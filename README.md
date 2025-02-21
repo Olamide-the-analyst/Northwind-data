@@ -78,58 +78,31 @@ SELECT companyname KeyCustomers, ROUND (CAST (SUM (od.unitprice*quantity) AS num
 	FROM orders
 	JOIN shippers ON orders.shipvia = shippers.shipperid
 	GROUP BY shippers.companyname
-	ORDER BY AVG(freight) DESC; 
-```
-' Sales Trends Over Time
-Insights:
-The yearly sales trend shows steady growth, with a noticeable increase in revenue over the years.
+	ORDER BY AVG(freight) DESC;
+  ```
+## **Insights and Recommendations**
+  1. Sales Trends Over Time
+**Insights:** The yearly sales trend shows steady growth, with a noticeable increase in revenue over the years. Seasonal spikes in sales are observed during holiday periods, indicating higher demand during specific times of the year.
+**Recommendations:**  Plan marketing campaigns and promotions during peak seasons (e.g., holidays) to maximize sales.
+- Ensure sufficient stock levels during high-demand periods to avoid stockouts and meet customer expectations.
+- Continue focusing on strategies that drive consistent yearly growth, such as expanding product offerings or entering new markets.
 
-Seasonal spikes in sales are observed during holiday periods, indicating higher demand during specific times of the year.
+ 3. Best and Worst Selling Products
+**Insights:** Product X generates the highest revenue, indicating strong customer demand, while product Y has minimal sales, suggesting low customer interest or potential issues with pricing, quality, or marketing.
+**Recommendations:** Highlight Product X in marketing campaigns and bundle it with complementary products to drive further sales.
+- Investigate why Product Y is underperforming. Consider revising its pricing, improving quality, or discontinuing it if it’s no longer viable.
+- Regularly review the product portfolio to identify high-performing and underperforming products, ensuring resources are allocated effectively.
 
-Recommendations:
-Capitalize on Seasonal Trends: Plan marketing campaigns and promotions during peak seasons (e.g., holidays) to maximize sales.
+ 4. Key Customers
+**Insights:** A small group of customers contributes significantly to total sales, indicating strong relationships with high-value clients. The top customer, Company A, accounts for a large portion of revenue.
+**Recommendations:** Offer personalized services, loyalty programs, or exclusive discounts to retain high-value customers.
+- Analyze customer data to identify potential high-value customers and develop targeted strategies to nurture these relationships.
+- Segment customers based on their purchasing behavior and tailor marketing efforts to each segment for better engagement.
 
-Inventory Management: Ensure sufficient stock levels during high-demand periods to avoid stockouts and meet customer expectations.
-
-Yearly Growth Strategy: Continue focusing on strategies that drive consistent yearly growth, such as expanding product offerings or entering new markets.
-
-2. Best and Worst Selling Products
-Insights:
-Best-Selling Product: Product X generates the highest revenue, indicating strong customer demand.
-
-Worst-Selling Product: Product Y has minimal sales, suggesting low customer interest or potential issues with pricing, quality, or marketing.
-
-Recommendations:
-Promote Best-Selling Products: Highlight Product X in marketing campaigns and bundle it with complementary products to drive further sales.
-
-Evaluate Underperforming Products: Investigate why Product Y is underperforming. Consider revising its pricing, improving quality, or discontinuing it if it’s no longer viable.
-
-Product Portfolio Optimization: Regularly review the product portfolio to identify high-performing and underperforming products, ensuring resources are allocated effectively.
-
-3. Key Customers
-Insights:
-A small group of customers contributes significantly to total sales, indicating strong relationships with high-value clients.
-
-The top customer, Company A, accounts for a large portion of revenue.
-
-Recommendations:
-Strengthen Relationships with Key Customers: Offer personalized services, loyalty programs, or exclusive discounts to retain high-value customers.
-
-Identify New Key Customers: Analyze customer data to identify potential high-value customers and develop targeted strategies to nurture these relationships.
-
-Customer Segmentation: Segment customers based on their purchasing behavior and tailor marketing efforts to each segment for better engagement.
-
-4. Shipping Costs Analysis
-Insights:
-Shipping costs vary significantly across providers, with Provider A being the most expensive on average.
-
-Some providers offer lower costs but may have longer delivery times or other trade-offs.
-
-Recommendations:
-Optimize Shipping Providers: Evaluate the cost-effectiveness and reliability of shipping providers. Consider switching to more cost-efficient providers without compromising delivery quality.
-
-Negotiate Contracts: Negotiate better rates with current providers or explore bulk shipping discounts to reduce costs.
-
-Monitor Shipping Performance: Regularly review shipping performance metrics (e.g., delivery times, customer satisfaction) to ensure a balance between cost and service quality.
-
+ 5. Shipping Costs Analysis
+**Insights:** Shipping costs vary significantly across providers, with Provider A being the most expensive on average.
+- Some providers offer lower costs but may have longer delivery times or other trade-offs.
+**Recommendations:** Evaluate the cost-effectiveness and reliability of shipping providers. Consider switching to more cost-efficient providers without compromising delivery quality.
+- Negotiate better rates with current providers or explore bulk shipping discounts to reduce costs.
+- Regularly review shipping performance metrics (e.g., delivery times, customer satisfaction) to ensure a balance between cost and service quality.
 
