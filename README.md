@@ -6,7 +6,6 @@ This repository contains SQL queries and analysis performed on the Northwind Dat
 2. Analysis objectives
 3. SQL queries
 4. Insights and recommendations
-5. How to use this repository
 
 ## **Project Overview**
 The Northwind database represents Northwind Traders, a global specialty foods distributor that sources high-quality, unique food products from suppliers worldwide and sells them to restaurants, cafes, and retailers. The company operates in multiple regions, including North America, Europe, and Asia, and serves a diverse customer base ranging from small businesses to large enterprises. Northwind Traders focuses on building long-term relationships with customers and suppliers, offering personalized service and maintaining a reputation for quality and reliability. The company manages its operations through efficient product sourcing, order fulfillment, and logistics, ensuring timely delivery of goods to its customers.
